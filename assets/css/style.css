@@ -1,0 +1,134 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+a{
+    display: block;
+}
+@font-face{
+    font-family: abnes;
+    src: url(../font/abnes.otf);
+}
+@font-face{
+    font-family: absci;
+    src: url(../font/absci.ttf);
+}
+@font-face{
+    font-family: barbarian;
+    src: url(../font/Barbarian.ttf);
+}
+@font-face{
+    font-family: brillia;
+    src: url(../font/brillia.ttf);
+}
+body{
+    background: rgb(27, 18, 34);
+    font-family: absci;
+}
+
+/* begin of header */
+header{
+    background: rgb(70, 43, 78);
+    height: 60px;
+    line-height: 60px;
+}
+header #logo{
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    font-family: barbarian;
+    font-size: x-large;
+}
+header #logo mark{
+    background: none;
+    color: rgb(26, 116, 26);
+}
+header nav{
+    float: right;
+}
+header .navbar{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    text-transform: uppercase;
+    text-align: center;
+}
+header .navbar li{
+    width: 100px;
+    height: 60px;
+}
+header .navbar li:hover, header .navbar .active{
+    background: rgb(61, 15, 114);
+}
+header .navbar li a{
+    color: rgb(255, 255, 255);
+}
+header #check{
+    display: none;
+}
+header nav .navbar-dropdown{
+    text-align: center;
+    position: relative;
+    display: none;
+}
+header nav .navbar-dropdown li{
+    background: rgb(70, 43, 78);
+}
+header nav .navbar-dropdown li:hover{
+    background: rgb(61, 15, 114);
+}
+header .menu{
+    float: right;
+    font-size: xx-large;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    display: none;
+}
+
+header nav .navbar-dropdown .navbar-dropdown{
+    position: absolute;
+    left: 100px;
+}
+header nav .navbar-dropdown .drop1{
+    top: 0;
+}
+header nav .navbar-dropdown .drop2{
+    top: 60px;
+}
+header nav .navbar-dropdown .drop3{
+    top: 120px;
+}
+@media (max-width: 780px){
+    .bi-caret-down-fill::before{
+        content: none;
+    }
+    header nav{
+        background: rgb(70, 43, 78);
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        width: 100%;
+        text-align: center;
+        transition: all .5s ease;
+    }
+    header .navbar{
+        display: block;
+    }
+    header .navbar li{
+        width: 100%;
+    }
+    header .menu{
+        display: block;
+    }
+    header input:checked ~ nav{
+        left: 0;
+    }
+    header nav .navbar-dropdown li{
+      display: none;
+    }
+    /* header nav .navbar>li:last-child{
+        display: none;
+    } */
+}
